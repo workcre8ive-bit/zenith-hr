@@ -55,15 +55,15 @@ export const RecognitionWall: React.FC = () => {
   };
 
   return (
-    <div className="glass p-8 rounded-3xl w-full flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+    <div className="glass p-6 md:p-8 rounded-3xl w-full flex flex-col gap-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h3 className="text-xl font-light opacity-80 uppercase tracking-widest">Recognition Wall</h3>
+          <h3 className="text-lg md:text-xl font-light opacity-80 uppercase tracking-widest">Recognition Wall</h3>
           <p className="text-[10px] text-white/40 mt-1 uppercase tracking-tighter">Celebrate your colleagues</p>
         </div>
         <button 
           onClick={() => setIsPosting(!isPosting)}
-          className="px-4 py-2 bg-sunset-orange/10 hover:bg-sunset-orange/20 border border-sunset-orange/30 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all"
+          className="w-full sm:w-auto px-4 py-2 bg-sunset-orange/10 hover:bg-sunset-orange/20 border border-sunset-orange/30 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all"
         >
           {isPosting ? 'Cancel' : 'Send Kudos'}
         </button>

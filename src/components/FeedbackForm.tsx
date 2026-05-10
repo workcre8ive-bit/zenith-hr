@@ -17,8 +17,8 @@ export const FeedbackForm: React.FC = () => {
   };
 
   return (
-    <div className="glass p-8 rounded-3xl w-full">
-      <h3 className="text-xl font-light mb-2 opacity-80 uppercase tracking-widest">Anonymous Feedback</h3>
+    <div className="glass p-6 md:p-8 rounded-3xl w-full">
+      <h3 className="text-lg md:text-xl font-light mb-2 opacity-80 uppercase tracking-widest">Anonymous Feedback</h3>
       <p className="text-xs text-white/40 mb-6 font-light">Your voice matters. This submission is fully encrypted and anonymous.</p>
       
       <AnimatePresence mode="wait">

@@ -12,11 +12,11 @@ const data = [
 
 export const TeamHarmony: React.FC = () => {
   return (
-    <div className="glass p-8 rounded-3xl w-full h-full flex flex-col">
-      <h3 className="text-xl font-light mb-auto opacity-80 uppercase tracking-widest">Team Harmony</h3>
-      <div className="h-[300px] w-full mt-4">
+    <div className="glass p-6 md:p-8 rounded-3xl w-full h-full flex flex-col">
+      <h3 className="text-lg md:text-xl font-light mb-auto opacity-80 uppercase tracking-widest">Team Harmony</h3>
+      <div className="h-[250px] sm:h-[300px] w-full mt-4 flex items-center justify-center">
         <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+          <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
             <PolarGrid stroke="rgba(255,255,255,0.1)" />
             <PolarAngleAxis 
               dataKey="subject" 
@@ -33,14 +33,14 @@ export const TeamHarmony: React.FC = () => {
               dataKey="A"
               stroke="#FF8C42"
               fill="#FF8C42"
-              fillOpacity={0.3}
+              fillOpacity={0.6}
             />
             <Radar
               name="Ideal State"
               dataKey="B"
               stroke="#6B4226"
               fill="#6B4226"
-              fillOpacity={0.1}
+              fillOpacity={0.2}
             />
           </RadarChart>
         </ResponsiveContainer>

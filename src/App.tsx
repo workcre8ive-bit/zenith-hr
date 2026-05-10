@@ -18,14 +18,14 @@ export default function App() {
       <Background />
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 h-20 px-8 flex items-center justify-between backdrop-blur-md border-bottom border-white/5 bg-black/10">
-        <div className="flex items-center gap-12">
-          <div className="flex items-center gap-2">
+      <nav className="fixed top-0 left-0 right-0 z-50 h-20 px-4 md:px-6 lg:px-8 flex items-center justify-between backdrop-blur-md border-bottom border-white/5 bg-black/10">
+        <div className="flex items-center gap-4 md:gap-8 lg:gap-12">
+          <div className="flex items-center gap-2 shrink-0">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sunset-orange to-sunset-purple shadow-lg shadow-sunset-orange/20" />
-            <span className="text-xl font-semibold tracking-tight">ZENITH<span className="text-white/40">HR</span></span>
+            <span className="text-lg md:text-xl font-semibold tracking-tight">ZENITH<span className="text-white/40">HR</span></span>
           </div>
           
-          <div className="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-[0.2em] text-white/40">
+          <div className="hidden lg:flex items-center gap-8 text-xs font-medium uppercase tracking-[0.2em] text-white/40">
             <a href="#" className="text-white hover:text-white transition-colors">Dashboard</a>
             <a href="#" className="hover:text-white transition-colors">People</a>
             <a href="#" className="hover:text-white transition-colors">Insights</a>
@@ -33,7 +33,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1 md:gap-4">
           <button className="p-2 hover:bg-white/5 rounded-full transition-colors text-white/60 hover:text-white">
             <Search size={20} />
           </button>
@@ -41,33 +41,33 @@ export default function App() {
             <Bell size={20} />
             <span className="absolute top-2 right-2 w-2 h-2 bg-sunset-orange rounded-full" />
           </button>
-          <div className="h-8 w-px bg-white/10 mx-2" />
-          <div className="flex items-center gap-3 pl-2 group cursor-pointer">
-            <div className="text-right hidden sm:block">
+          <div className="hidden lg:block h-8 w-px bg-white/10 mx-2" />
+          <div className="flex items-center gap-2 md:gap-3 pl-1 md:pl-2 group cursor-pointer">
+            <div className="text-right hidden xl:block">
               <p className="text-xs font-medium">Alex Chen</p>
               <p className="text-[10px] text-white/40 uppercase tracking-tighter">Product Designer</p>
             </div>
-            <div className="w-10 h-10 rounded-full border border-white/20 overflow-hidden bg-white/5 flex items-center justify-center group-hover:border-sunset-orange transition-colors">
-              <User size={20} className="text-white/40" />
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/20 overflow-hidden bg-white/5 flex items-center justify-center group-hover:border-sunset-orange transition-colors">
+              <User size={18} className="text-white/40 md:size-5" />
             </div>
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="pt-28 pb-12 px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+      <main className="pt-28 pb-32 lg:pb-12 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
         
         {/* Left Column (Main) */}
-        <div className="md:col-span-8 flex flex-col gap-6 lg:gap-8">
+        <div className="md:col-span-2 lg:col-span-8 flex flex-col gap-6 lg:gap-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col gap-2"
           >
-            <h1 className="text-4xl lg:text-5xl font-light tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight">
               Good Morning, <span className="font-semibold italic text-glow">Alex.</span>
             </h1>
-            <p className="text-white/40 font-light">It's Saturday, May 19th. Your team is currently in high harmony.</p>
+            <p className="text-sm sm:text-base text-white/40 font-light">It's Saturday, May 19th. Your team is currently in high harmony.</p>
           </motion.div>
 
           <motion.div
@@ -107,7 +107,7 @@ export default function App() {
         </div>
 
         {/* Right Column (Sidebar) */}
-        <div className="md:col-span-4 flex flex-col gap-6 lg:gap-8">
+        <div className="md:col-span-2 lg:col-span-4 flex flex-col gap-6 lg:gap-8">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -121,9 +121,9 @@ export default function App() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="glass p-8 rounded-3xl"
+            className="glass p-6 md:p-8 rounded-3xl"
           >
-            <h3 className="text-xl font-light mb-6 opacity-80 uppercase tracking-widest">Office Pulse</h3>
+            <h3 className="text-lg md:text-xl font-light mb-6 opacity-80 uppercase tracking-widest">Office Pulse</h3>
             <div className="space-y-6">
               {[
                 { title: 'New Peer Review', time: '2m ago', desc: 'Sarah left you a review', type: 'Review' },
@@ -131,7 +131,7 @@ export default function App() {
                 { title: 'HR Update', time: '3h ago', desc: 'Zenith-HR 2.0 is live', type: 'System' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 group cursor-pointer">
-                  <div className="w-1 h-10 rounded-full bg-white/5 group-hover:bg-sunset-orange transition-colors" />
+                  <div className="w-1 h-10 rounded-full bg-white/5 group-hover:bg-sunset-orange transition-colors shrink-0" />
                   <div>
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-[10px] tracking-widest uppercase opacity-40">{item.type}</span>
@@ -150,7 +150,7 @@ export default function App() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex gap-4"
+            className="flex flex-row md:flex-col lg:flex-row gap-4"
           >
             <button className="flex-1 glass py-4 rounded-2xl text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-white/10 transition-all">Support</button>
             <button className="flex-1 bg-white/5 hover:bg-red-500/10 border border-white/5 hover:border-red-500/20 py-4 rounded-2xl text-[10px] uppercase tracking-[0.2em] font-bold text-red-500/60 hover:text-red-500 transition-all flex items-center justify-center gap-2">
@@ -162,11 +162,19 @@ export default function App() {
       </main>
 
       {/* Mobile Nav Overlay (Simulated) */}
-      <div className="md:hidden fixed bottom-6 left-6 right-6 h-16 glass rounded-full flex items-center justify-around px-6 z-50">
-        <User size={20} className="text-sunset-orange" />
-        <Bell size={20} className="opacity-40" />
-        <Search size={20} className="opacity-40" />
-        <LogOut size={20} className="opacity-40" />
+      <div className="md:hidden fixed bottom-6 left-6 right-6 h-16 glass rounded-full flex items-center justify-around px-4 z-50">
+        <button className="p-3 text-sunset-orange bg-sunset-orange/10 rounded-full">
+          <User size={20} />
+        </button>
+        <button className="p-3 opacity-40 hover:opacity-100 transition-opacity">
+          <Bell size={20} />
+        </button>
+        <button className="p-3 opacity-40 hover:opacity-100 transition-opacity">
+          <Search size={20} />
+        </button>
+        <button className="p-3 opacity-40 hover:opacity-100 transition-opacity">
+          <LogOut size={20} />
+        </button>
       </div>
     </div>
   );

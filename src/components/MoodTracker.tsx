@@ -15,27 +15,27 @@ export const MoodTracker: React.FC = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div className="glass p-8 rounded-3xl w-full">
-      <h3 className="text-xl font-light mb-6 opacity-80 uppercase tracking-widest">How are you feeling today?</h3>
-      <div className="flex justify-between items-center gap-4">
+    <div className="glass p-6 md:p-8 rounded-3xl w-full">
+      <h3 className="text-lg md:text-xl font-light mb-6 opacity-80 uppercase tracking-widest text-center md:text-left">How are you feeling today?</h3>
+      <div className="grid grid-cols-5 items-center gap-1 sm:gap-4">
         {moods.map((mood, idx) => (
           <motion.button
             key={idx}
             onClick={() => setSelected(idx)}
             className={cn(
-              "flex flex-col items-center gap-3 p-4 rounded-2xl transition-all duration-300",
+              "flex flex-col items-center gap-2 p-2 sm:p-4 rounded-2xl transition-all duration-300 w-full",
               selected === idx ? "bg-white/10" : "hover:bg-white/5"
             )}
-            whileHover={{ scale: 1.2, filter: 'brightness(1.5)' }}
+            whileHover={{ scale: 1.1, filter: 'brightness(1.5)' }}
             whileTap={{ scale: 0.95 }}
           >
             <motion.div
-              animate={selected === idx ? { scale: 1.1, dropShadow: '0 0 20px rgba(255,255,255,0.5)' } : {}}
-              className={cn("w-12 h-12 flex items-center justify-center", mood.color)}
+              animate={selected === idx ? { scale: 1.1 } : {}}
+              className={cn("w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center", mood.color)}
             >
-              <mood.icon size={36} strokeWidth={1.5} />
+              <mood.icon className="w-full h-full" strokeWidth={1.5} />
             </motion.div>
-            <span className={cn("text-xs font-medium tracking-wide opacity-60", selected === idx && "opacity-100")}>
+            <span className={cn("text-[8px] sm:text-xs font-medium tracking-wide opacity-60 text-center", selected === idx && "opacity-100")}>
               {mood.label}
             </span>
           </motion.button>
